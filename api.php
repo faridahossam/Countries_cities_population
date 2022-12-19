@@ -4,7 +4,7 @@ require_once("config.php");
 $citiesPopulation = "https://countriesnow.space/api/v0.1/countries/population/cities";
 $countryPopulation = "https://countriesnow.space/api/v0.1/countries/population";
 $countries = "https://countriesnow.space/api/v0.1/countries/iso";
-//get countries 
+//get all countries 
 $data = file_get_contents($countries);
 $results = json_decode($data, true);
 foreach ($results['data'] as $result) {
@@ -12,12 +12,12 @@ foreach ($results['data'] as $result) {
     $iso2 = $result['Iso2'];
     $iso3 = $result['Iso3'];
      //insert
-        $sql = "INSERT INTO countries(name,iso2,iso3)
-        VALUES('$name', '$iso2','$iso3')
+        $sql = "INSERT INTO countries(name,iso3,iso2)
+        VALUES('$name', '$iso3','$iso2')
         ON DUPLICATE KEY UPDATE
         name = '$name',
-        iso2 = '$iso2',
-        iso3 = '$iso3'";
+        iso3 = '$iso3',
+        iso2 = '$iso2'";
         $response = mysqli_query($connection, $sql);
 }
 

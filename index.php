@@ -1,5 +1,5 @@
 
-<!DOCTYPE html>
+<!--DOCTYPE html>
 
 <html>
     <head>
@@ -7,6 +7,7 @@
     </head>
     <body>
         <a class="button" href="displayList.php">ALL Countries </a>
-        <a class="button" href="fetchPopulation.php">Country Population</a>
-    </body>
-</html>
+        <a class="button" href="fetchPopulation.php">Country Population</a></body>
+</html-->
+<?php
+header("location:displayList.php");

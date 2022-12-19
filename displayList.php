@@ -32,13 +32,14 @@
          <th>Country Name</th>
          <th>Iso2</th>
          <th>Iso3</th>
+         <th></th>
          </tr>";
     while ($row = mysqli_fetch_assoc($res_data)) {
-        //here goes the data
         echo "<tr>
         <td>{$row['name']}</td>
         <td>{$row['iso2']}</td>
         <td>{$row['iso3']}</td>
+        <td><a href='fetchPopulation?code=$row[iso3]'>View population</a></td>
         </tr>";
 
     }
